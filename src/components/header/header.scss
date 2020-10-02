@@ -1,0 +1,103 @@
+.header {
+  background: #ffffff;
+  padding: 2rem 0 6rem;
+  position: relative;
+
+  .header-wap {
+    .logo {
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .header-location {
+    .location {
+      background: #f4f4f4;
+      padding: 0 3px 3px 3px;
+      font-family: 'Times New Roman', Times, serif;
+
+      p {
+        font-size: 10px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+    }
+  }
+
+  .header-search {
+    img {
+      width: 20px;
+      margin-right: 5px;
+    }
+
+    .search-item {
+      background: #f4f4f4;
+      width: 100%;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+  }
+
+  .header-authen {
+    text-transform: uppercase;
+
+    span {
+      margin: 0 5px;
+    }
+  }
+
+  .header-cart {
+    padding-right: 0;
+
+    img {
+      width: 34px;
+    }
+
+    span {
+      font-size: 15px;
+      color: red;
+    }
+  }
+
+
+  .menu {
+    position: absolute;
+    width: 100%;
+    top: 75%;
+    background: #ffffff;
+    z-index: 100;
+
+
+    .section-wrap {
+      padding: 0;
+
+      a {
+        text-transform: uppercase;
+
+        &:hover {
+          transition: all 0.7s;
+
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #f15b67;
+            transition: all 0.5s;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: transparent;
+        }
+      }
+    }
+
+
+  }
+}

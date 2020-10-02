@@ -1,0 +1,19 @@
+.category-section {
+  .category-carousel {
+    .alice-carousel {
+      .alice-carousel__wrapper {
+        ul {
+          li {
+            height: 400px;
+            padding: 0 2px;
+
+            img {
+              width: 100%;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
