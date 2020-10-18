@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-
+import { logout } from "../../redux/action/login";
 import Logo from "assets/images/logo.png";
 import User from "assets/images/user.png";
 import {
@@ -15,25 +16,42 @@ import {
 } from "components/icons/icons";
 
 export const Header = () => {
-  useEffect(() => {}, []);
-
+  const user = useSelector((state) => state.User);
+  useEffect(() => {
+    const menuDown = document.querySelector(".menu");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 125) {
+        menuDown.classList.add("active");
+      } else {
+        menuDown.classList.remove("active");
+      }
+    });
+  }, []);
+  const dispatch = useDispatch();
+  const remove = () => {
+    dispatch(logout());
+  };
   return (
     <div className="header">
       <div className="container-fluid">
         <div className="row ">
           <div className="container">
             <div className="row header-wap d-flex align-items-center">
-              <div className="logo col-2">
+              <div className="logo col-md-2 col-4 d-flex align-items-center">
+                <div className="header-nav">
+                  <BarsIcon />
+                </div>
                 <Link to="/">
                   <img src={Logo} />
                 </Link>
               </div>
-              <div className="header-location col-2 d-flex align-items-center justify-content-center">
+              <div className="header-location col-md-2 d-flex align-items-center justify-content-center">
                 <div className="location">
                   <p>Chọn khu vực giao hàng</p>
                   <Link to="/">
                     <select className="w-100">
                       <option>Hà Nội</option>
+                      <option>Hồ Chí Minh</option>
                     </select>
                   </Link>
                 </div>
@@ -46,18 +64,30 @@ export const Header = () => {
               </div>
               <div className="header-authen d-flex col-2">
                 <div className="d-flex align-items-center justify-content-center">
-                  <Link to="/">
-                    <p>Đăng ký</p>
-                  </Link>
-                  <span>/</span>
-                  <Link to="/">
-                    <p>Đăng nhập</p>
-                  </Link>
+                  {user.username ? (
+                    <div>
+                      {user.username}
+                      <button onClick={remove}>Logout</button>
+                    </div>
+                  ) : (
+                    <div className="d-flex align-items-center">
+                      <Link to="/">
+                        <p>Đăng ký</p>
+                      </Link>
+                      <span>/</span>
+                      <Link to="/login">
+                        <p>Đăng nhập</p>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="header-cart d-flex align-items-center justify-content-center col-1">
-                <CartIcon />
-                <span>(0)</span>
+              <div className="header-cart d-flex align-items-center justify-content-center col-md-1 col-4">
+                <SearchIcon className="search-mobile" />
+                <div className="cart d-flex align-items-center">
+                  <CartIcon />
+                  <span>(0)</span>
+                </div>
               </div>
             </div>
           </div>

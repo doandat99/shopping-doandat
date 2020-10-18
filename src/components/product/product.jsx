@@ -15,7 +15,9 @@ export const Product = (props) => {
         </p>
       </div>
       <h2 className="product-title">{props.title}</h2>
-      <div className="price-status">{props.status}</div>
+      {props.status.content && (
+        <div className="price-status">{props.status.content}</div>
+      )}
     </Link>
   );
 };

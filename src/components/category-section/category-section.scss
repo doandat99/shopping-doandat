@@ -1,15 +1,92 @@
-.category-section {
-  .category-carousel {
-    .alice-carousel {
-      .alice-carousel__wrapper {
-        ul {
-          li {
-            height: 400px;
-            padding: 0 2px;
+@import '~assets/styles/colors';
 
-            img {
-              width: 100%;
-              padding: 0;
+.category-section {
+  position: relative;
+
+  .see-all {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: $gray;
+
+    @media(max-width:991px) {
+      top: -40px;
+      left: 170px;
+    }
+
+
+    img {
+      margin-left: 20px;
+      width: 10px;
+    }
+  }
+
+  .category-carousel {
+    .alice-carousel__stage {
+      .alice-carousel__stage-item {
+        padding: 0 15px;
+      }
+    }
+
+    .alice-carousel__prev-btn {
+      .alice-carousel__prev-btn-wrapper {
+        position: absolute;
+        right: -40px;
+        top: 120px;
+
+        @media(max-width: 991px) {
+          right: 0;
+        }
+
+        .alice-carousel__prev-btn-item {
+          position: relative;
+
+          span {
+            position: absolute;
+            right: -20px;
+            color: transparent;
+
+            &::before {
+              content: "";
+              display: inline-block;
+              background: url('../../assets/icons/icon-angle-right.png') no-repeat;
+              width: 30px;
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
+
+    .alice-carousel__next-btn {
+      .alice-carousel__next-btn-wrapper {
+        position: absolute;
+        left: -40px;
+        top: 120px;
+
+        @media(max-width: 991px) {
+          left: 0;
+
+        }
+
+        .alice-carousel__next-btn-item {
+          position: relative;
+
+          span {
+            position: absolute;
+            left: -20px;
+            color: transparent;
+
+            &::before {
+              content: "";
+              display: inline-block;
+              background: url('../../assets/icons/icon-angle-left.png') no-repeat;
+              width: 30px;
+              height: 50px;
+
+
             }
           }
         }

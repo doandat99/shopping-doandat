@@ -4,19 +4,27 @@
   .see-all {
     display: none;
   }
+
   h2.title-block {
     border-bottom: 1px solid $gray-light;
     padding-bottom: 2rem;
     color: $black;
+
+    @media(max-width: 991px) {
+      padding-top: 20px;
+    }
   }
+
   .category-banner {
     img {
       width: 100%;
     }
   }
+
   .category-footer {
     margin-bottom: 5rem;
   }
+
   .see-more-category {
     padding: 12px 5rem;
     font-size: 14px;
@@ -25,6 +33,7 @@
     color: $white;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
+
     &:after {
       position: absolute;
       top: -3px;
