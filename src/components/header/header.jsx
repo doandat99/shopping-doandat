@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./header.scss";
 import { Link } from "react-router-dom";
@@ -17,6 +17,12 @@ import {
 
 export const Header = () => {
   const user = useSelector((state) => state.User);
+  const [visibleMenu, setvisibleMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setvisibleMenu(!visibleMenu);
+  };
+
   useEffect(() => {
     const menuDown = document.querySelector(".menu");
     window.addEventListener("scroll", () => {
@@ -39,7 +45,7 @@ export const Header = () => {
             <div className="row header-wap d-flex align-items-center">
               <div className="logo col-md-2 col-4 d-flex align-items-center">
                 <div className="header-nav">
-                  <BarsIcon />
+                  <BarsIcon onClick={toggleMenu} />
                 </div>
                 <Link to="/">
                   <img src={Logo} />
@@ -71,7 +77,7 @@ export const Header = () => {
                     </div>
                   ) : (
                     <div className="d-flex align-items-center">
-                      <Link to="/">
+                      <Link to="/signin">
                         <p>Đăng ký</p>
                       </Link>
                       <span>/</span>
@@ -88,6 +94,68 @@ export const Header = () => {
                   <CartIcon />
                   <span>(0)</span>
                 </div>
+              </div>
+            </div>
+
+            <div
+              className={classNames("nav-menu-mobile", { active: visibleMenu })}
+            >
+              <div className="nav-menu-main">
+                <div className="nav-close" onClick={toggleMenu}>
+                  <CloseIcon />
+                </div>
+                <div className="nav-user">
+                  <img src={User} alt="" />
+                </div>
+                <ul>
+                  <li>
+                    <Link to="/">Giày</Link>
+                    <PlusIcon />
+                  </li>
+                  <li>
+                    <Link to="/">Túi Xách</Link>
+                    <PlusIcon />
+                  </li>
+                  <li>
+                    <Link to="/">Balo</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Ví Bóp</Link>
+                    <PlusIcon />
+                  </li>
+                  <li>
+                    <Link to="/">Dép & Guốc</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Phụ Kiện</Link>
+                    <PlusIcon />
+                  </li>
+                  <li>
+                    <Link to="/">Giftcard</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Sale Off</Link>
+                  </li>
+                  <li>
+                    <Link to="/">New arrival</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Summer Kisses</Link>
+                  </li>
+                  <li>
+                    <Link to="/">Tin Tức</Link>
+                    <PlusIcon />
+                  </li>
+                </ul>
+                <div className="line"></div>
+                <ul>
+                  <li>
+                    <Link to="/signin">Đăng ký</Link>
+                  </li>
+                  <li>
+                    <Link to="/login">Đăng nhập</Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

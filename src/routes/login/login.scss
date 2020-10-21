@@ -3,4 +3,77 @@
   height: 400px;
   background: #ffffff;
   margin: 30px auto;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+
+  .text {
+    margin-top: 20px;
+
+    ul {
+      border-right: 1px solid #ccc;
+      padding: 10px 15px;
+
+      li {
+        list-style: circle;
+        font-size: 15px;
+        padding-bottom: 10px;
+        font-weight: normal;
+      }
+    }
+
+    @media(max-width: 991px) {
+      display: none;
+    }
+  }
+
+  .user {
+    @media(max-width:991px) {
+      margin: 0 auto;
+    }
+
+    text-align: center;
+
+    .title {
+      font-size: 19px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      color: #2c3e50;
+      font-size: 1rem;
+      background-color: white;
+    }
+
+    button {
+      width: 100px;
+      background: #f15b67;
+      font-weight: bold;
+      color: white;
+      border: 0 none;
+      cursor: pointer;
+      padding: 10px 5px;
+      margin: 30px 5px;
+    }
+
+    .btn-facebook {
+      background: transparent;
+      border: 1px solid blue;
+      color: blue;
+      margin: 30px auto;
+    }
+
+    .or {
+      margin: 20px;
+      font-size: 14px;
+    }
+  }
 }

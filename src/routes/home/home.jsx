@@ -1,13 +1,12 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import "./home.scss";
 import Gif from "assets/images/banner-gif.gif";
 import mockupDataDiscount from "data/mockupDataDiscount";
 import mockupDataBestSeller from "data/mockupDataBestSeller";
 import mockupDataHot from "data/mockupDataHot";
 import { HomepageCarousel } from "components/homepage-carousel/homepage-carousel";
-import { Link } from "react-router-dom";
-import iconAngleRight from "assets/icons/icon-angle-right.png";
+
 import { CategorySection } from "../../components/category-section/category-section";
 const Homepage = () => {
   const dataNew = useSelector((state) => state.mockupDataCategory);
@@ -17,7 +16,7 @@ const Homepage = () => {
       <div className="container">
         <div className="hot-trend section-wrap">
           <h2 className="title-block">Hot Trend 2020</h2>
-          <img src={Gif} />
+          <img src={Gif} alt=""/>
         </div>
         <CategorySection
           title="SẢN PHẨM MỚI NHẤT"

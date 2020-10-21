@@ -7,9 +7,9 @@ import mockupDataBestSeller from "data/mockupDataBestSeller";
 import mockupDataHot from "data/mockupDataHot";
 import mockupDataNewest from "data/mockupDataNewest";
 
-const Category = (match) => {
+const Category = ({ match }) => {
   const [data, setData] = useState([]);
-  const currentCategory =match.params;
+  const currentCategory = match.params.categoty;
   useEffect(() => {
     window.scrollTo(0, 0);
     currentCategory === "san-pham-moi-nhat"

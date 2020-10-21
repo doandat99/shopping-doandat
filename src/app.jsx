@@ -12,6 +12,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { RootReducer } from "redux/reducer";
 import Login from "./routes/login/login";
+import Signin from "./routes/singin/signin";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const store = createStore(RootReducer);
@@ -24,6 +25,7 @@ const App = () => {
           <Header />
           <Route path="/" exact component={Homepage} />
           <Route path="/login" exact component={Login} />
+          <Route path="/signin" exact component={Signin} />
           <Route path="/category/:category" exact component={Category} />
           <Route path="/product-detail" exact component={ProductDetail} />
           <Footer />
