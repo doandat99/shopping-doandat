@@ -224,7 +224,7 @@
     &.active {
       pointer-events: unset;
       visibility: visible;
-      overflow: scroll;
+
 
 
 
@@ -237,6 +237,7 @@
     .nav-menu-main {
       padding: 60px 15px 15px 15px;
       width: 40rem;
+      height: 100%;
       background: $white;
       z-index: 10;
       position: absolute;
