@@ -104,9 +104,17 @@ export const Header = () => {
                 <div className="nav-close" onClick={toggleMenu}>
                   <CloseIcon />
                 </div>
-                <div className="nav-user">
-                  <img src={User} alt="" />
-                </div>
+                {user.username ? (
+                  <div>
+                    {user.username}
+                    <button onClick={remove}>Logout</button>
+                  </div>
+                ) : (
+                  <div className="nav-user">
+                    <img src={User} alt="" />
+                  </div>
+                )}
+
                 <ul>
                   <li>
                     <Link to="/">Giày</Link>

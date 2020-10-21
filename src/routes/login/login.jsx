@@ -4,6 +4,7 @@ import { login } from "../../redux/action/login";
 import { useHistory } from "react-router-dom";
 import "./login.scss";
 import { FacebookIcon } from "components/icons/icons";
+import { Link } from "react-router-dom";
 const Login1 = () => {
   const dispath = useDispatch();
   // const newLogin = useSelector((state) => state.Login.user);
@@ -54,10 +55,12 @@ const Login1 = () => {
         <br />
         <span className="or">Hoặc đăng nhập bằng ....</span>
         <br />
-        <button className="btn-facebook d-flex align-items-center justify-content-center">
-          <FacebookIcon />
-          Facebook
-        </button>
+        <Link to="/">
+          <button className="btn-facebook d-flex align-items-center justify-content-center">
+            <FacebookIcon />
+            Facebook
+          </button>
+        </Link>
       </div>
     </div>
   );
