@@ -6,10 +6,12 @@ import mockupDataDiscount from "data/mockupDataDiscount";
 import mockupDataBestSeller from "data/mockupDataBestSeller";
 import mockupDataHot from "data/mockupDataHot";
 import mockupDataNewest from "data/mockupDataNewest";
+import { connect } from "react-redux";
 
 const Category = ({ match }) => {
   const [data, setData] = useState([]);
-  const currentCategory = match.params.categoty;
+  const currentCategory = match.params.category;
+  console.log(currentCategory);
   useEffect(() => {
     window.scrollTo(0, 0);
     currentCategory === "san-pham-moi-nhat"
@@ -35,4 +37,8 @@ const Category = ({ match }) => {
   );
 };
 
-export default Category;
+const mapStateToProps = (state) => ({
+  mockupDataNewest: state.mockupDataCategory,
+});
+
+export default connect(mapStateToProps)(Category);
